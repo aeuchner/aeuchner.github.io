@@ -1,9 +1,10 @@
 function GetOverall(player){
-	var urlString = "http://services.runescape.com/m=hiscore/index_lite.ws?player=Ystin";
-	var req = new XMLHttpsRequest();
-	req.open('GET', urlString, false);
-	req.send(null);
-	if(req.status == 200){
-		console.log(req.responseText);
-	}
+	$.ajax({
+		url: 'http://services.runescape.com/m=hiscore/index_lite.ws?player=Ystin',
+		headers: {'Access-Control-Allow-Origin': "*"},
+		// dataType: "jsonp",
+		success: function(result){
+			console.log(result);
+		}
+	});
 }
