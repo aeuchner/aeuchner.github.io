@@ -8,8 +8,24 @@
 
   <body>
     <p> Howdy </p>
-    <button type="button" onclick="GetOverall('Ystin')"> Highscores </button>
+    <p id=skilltest> before </p>
+    <button type="button" onclick="TestReturn('Ystin')"> Highscores </button>
+    <!-- <input type="text" oninput="logHS(this.value)"> -->
   </body>
 
+
+  <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCzfbSfiSfoiK4JZPH-1cKCHPVxawOO_LI",
+      authDomain: "rs-pet-project.firebaseapp.com",
+      databaseURL: "https://rs-pet-project.firebaseio.com",
+      projectId: "rs-pet-project",
+      storageBucket: "rs-pet-project.appspot.com",
+      messagingSenderId: "252227932639"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 </html>
