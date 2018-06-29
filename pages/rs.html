@@ -1,18 +1,10 @@
 <html>
   <head>
     <title> RS playtime </title>
-    <script src="scripts/rs-scripts.js"></script>
+    <script src="../scripts/rs-scripts.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="ajax-cross-origin/js/jquery.ajax-cross-origin.min.js"></script>
+    <!-- <script src="ajax-cross-origin/js/jquery.ajax-cross-origin.min.js"></script> -->
   </head>
-
-  <body>
-    <p> Howdy </p>
-    <p id=skilltest> before </p>
-    <button type="button" onclick="TestReturn('Ystin')"> Highscores </button>
-    <!-- <input type="text" oninput="logHS(this.value)"> -->
-  </body>
-
 
   <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
   <script>
@@ -27,5 +19,15 @@
     };
     firebase.initializeApp(config);
   </script>
+
+  <body>
+    <p> Howdy </p>
+    <p id=skilltest> before </p>
+    <button type="button" onclick="TestReturn('Ystin')"> Highscores </button>
+    <!-- <input type="text" oninput="logHS(this.value)"> -->
+  </body>
+
+
+
 
 </html>
