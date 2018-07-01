@@ -1,0 +1,28 @@
+body {
+    font: 20px Montserrat, sans-serif;
+    line-height: 1.8;
+}
+#XPTable {
+  max-width: 500px;
+}
+.tblhead {
+  padding: 5px;
+  color: red;
+  outline-style: dashed;
+}
+.rowhead {
+  padding-right: 10px;
+  color: blue;
+}
+.skill {
+  float: left;
+  text-align: left;
+  width: 200px;
+}
+.xp {
+  float: right;
+  /* width: 300px; */
+}
+.tr {
+  max-width: 500px;
+}

@@ -16,7 +16,13 @@ function TestReturn(){
 	// GetOverallFB(function(overall){console.log(overall + ' callback?')});
 	//GetHSFB(function(skills){$('#skilltest').html(skills.Attack)});
 	//SetText('skilltest', 'Magic');
-	GetPlayerHS('Ystin', function(skills){$('#skilltest').html(skills.Attack)});
+	//GetPlayerHS('Ystin', function(skills){$('#skilltest').html(skills.Attack)});
+
+	GetPlayerHS('Ystin', function(skills){
+			$('#skilltest').html(JSON.stringify(skills))
+		}
+	);
+
 }
 
 //Callback for input player
@@ -46,4 +52,27 @@ function SetText(id, skill){
 
 function logHS(player){
 	console.log(player);
+}
+
+
+function createDefTable(){
+	var player = getPlayer();
+	// $(XPTable).append("<div><span class=\"tblhead skill\">Skill</span> <span class=\"tblhead xp\">XP</span></div>");
+	// $(XPTable).append("<div><span class=\"skill\">" + getPlayer() + "</span> <span class=\"xp\">XP</span></div>");
+
+	var tableresult;
+	//table head
+	tableresult = '<table class=\"xptable\">';
+
+	tableresult += '<tr> <th class=\"skill\">Skill</th> <th class=\"xp\">XP</th> </tr>'
+
+	//table tail
+	tableresult +='<table>';
+	$(XPTable).html(tableresult);
+}
+
+//Stub function to get current player
+function getPlayer(){
+	// console.log("in getPlayer");
+	return 'Ystin';
 }
