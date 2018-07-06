@@ -60,19 +60,66 @@ function createDefTable(){
 	// $(XPTable).append("<div><span class=\"tblhead skill\">Skill</span> <span class=\"tblhead xp\">XP</span></div>");
 	// $(XPTable).append("<div><span class=\"skill\">" + getPlayer() + "</span> <span class=\"xp\">XP</span></div>");
 
-	var tableresult;
 	//table head
-	tableresult = '<table class=\"xptable\">';
+	$(XPTable).append('<table class=\"xptable\">');
+	$(XPTable).append('<tr> <th class=\"tblhead skill\">Skill</th> <th class=\"tblhead xp\">XP</th> </tr>');
 
-	tableresult += '<tr> <th class=\"skill\">Skill</th> <th class=\"xp\">XP</th> </tr>'
+	GetPlayerHS('Ystin', function(skills){
+			//$('#skilltest').html(JSON.stringify(skills))
+			//Fill out table
+			buildDefTable(skills);
+
+			$(XPTable).append('<table>');
+		}
+	);
 
 	//table tail
-	tableresult +='<table>';
-	$(XPTable).html(tableresult);
+	$(XPTable).append('<table>');
+	//$(XPTable).html(tableresult);
 }
 
 //Stub function to get current player
 function getPlayer(){
 	// console.log("in getPlayer");
 	return 'Ystin';
+}
+
+function buildDefTable(data){
+	var res;
+	//res += makeTblString("Overall", data.Overall);
+	res += makeTblString("Attack", data.Attack);
+	res += makeTblString("Defence", data.Defence);
+	res += makeTblString("Strength", data.Strength);
+	res += makeTblString("Constitution", data.Constitution);
+	res += makeTblString("Ranged", data.Ranged);
+	res += makeTblString("Prayer", data.Prayer);
+	res += makeTblString("Magic", data.Magic);
+	res += makeTblString("Cooking", data.Cooking);
+	res += makeTblString("Woodcutting", data.Woodcutting);
+	res += makeTblString("Fletching", data.Fletching);
+	res += makeTblString("Fishing", data.Fishing);
+	res += makeTblString("Firemaking", data.Firemaking);
+	res += makeTblString("Crafting", data.Crafting);
+	res += makeTblString("Smithing", data.Smithing);
+	res += makeTblString("Mining", data.Mining);
+	res += makeTblString("Herblore", data.Herblore);
+	res += makeTblString("Agility", data.Agility);
+	res += makeTblString("Thieving", data.Thieving);
+	res += makeTblString("Slayer", data.Slayer);
+	res += makeTblString("Farming", data.Farming);
+	res += makeTblString("Runecrafting", data.Runecrafting);
+	res += makeTblString("Hunter", data.Hunter);
+	res += makeTblString("Construction", data.Construction);
+	res += makeTblString("Summoning", data.Summoning);
+	res += makeTblString("Dungeoneering", data.Dungeoneering);
+	res += makeTblString("Divination", data.Divination);
+	res += makeTblString("Invention", data.Invention);
+
+
+	$(XPTable).append(res);
+}
+
+function makeTblString(skill, data){
+	var res = '<tr> <td class=\"skill\">' + skill + '</td> <td class=\"xp\">' + data + '</td> </tr>';
+	return res;
 }

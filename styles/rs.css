@@ -1,28 +1,36 @@
 body {
-    font: 20px Montserrat, sans-serif;
+    font: 12px Montserrat, sans-serif;
     line-height: 1.8;
 }
 #XPTable {
   max-width: 500px;
+  table-layout: auto;
+  line-height: normal;
+  /* border-collapse: collapse; */
+  /* border: 1px solid black; */
+}
+tr {
+  border: 1px solid black;
+}
+td {
+  font: 14px Geneva, sans-serif;
+  border-top: 1px solid black;
 }
 .tblhead {
-  padding: 5px;
-  color: red;
-  outline-style: dashed;
+  font-size: 14px;
+  font-weight: bold;
 }
 .rowhead {
   padding-right: 10px;
   color: blue;
 }
 .skill {
-  float: left;
+  border-spacing: 10px;
   text-align: left;
-  width: 200px;
+  width: 110px;
 }
 .xp {
-  float: right;
+  border-spacing: 10px;
+  text-align: left;
   /* width: 300px; */
-}
-.tr {
-  max-width: 500px;
 }
