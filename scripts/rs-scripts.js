@@ -19,6 +19,7 @@ function TestReturn(){
 	//GetPlayerHS('Ystin', function(skills){$('#skilltest').html(skills.Attack)});
 
 	GetPlayerHS('Ystin', function(skills){
+			console.log(skills);
 			$('#skilltest').html(JSON.stringify(skills))
 		}
 	);
