@@ -63,7 +63,7 @@ function createDefTable(){
 
 	//table head
 	$(XPTable).append('<table class=\"xptable\">');
-	$(XPTable).append('<tr> <th class=\"tblhead skill\">Skill</th> <th class=\"tblhead xp\">XP</th> </tr>');
+	$(XPTable).append(makeHeaderString());
 
 	GetPlayerHS('Ystin', function(skills){
 			//$('#skilltest').html(JSON.stringify(skills))
@@ -87,6 +87,7 @@ function getPlayer(){
 
 function buildDefTable(data){
 	var res;
+
 	//res += makeTblString("Overall", data.Overall);
 	res += makeTblString("Attack", data.Attack);
 	res += makeTblString("Defence", data.Defence);
@@ -116,11 +117,26 @@ function buildDefTable(data){
 	res += makeTblString("Divination", data.Divination);
 	res += makeTblString("Invention", data.Invention);
 
+	// console.log(data.Attack.XP);
 
 	$(XPTable).append(res);
 }
 
+function makeHeaderString(){
+	return '<tr>' +
+		'<th class=\"tblhead skill\">Skill</th>' +
+		'<th class=\"tblhead lvl\"> Lvl </th>' +
+		'<th class=\"tblhead lvl\"> Virt </th>' +
+		'<th class=\"tblhead xp\">XP</th>' +
+	'</tr>'
+}
+
 function makeTblString(skill, data){
-	var res = '<tr> <td class=\"skill\">' + skill + '</td> <td class=\"xp\">' + data + '</td> </tr>';
-	return res;
+	var row = '<tr>' +
+			 '<td class=\"skill\">' + skill + '</td>' +
+			 '<td class=\"lvl\">' + data.Level + '</td>' +
+			 '<td class=\"lvl\">' + data.VirtualLevel + '</td>' +
+			 '<td class=\"xp\" id="AttackCell">' + data.XP + '</td>' +
+			 '</tr>';
+	return row;
 }

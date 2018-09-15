@@ -3,9 +3,12 @@ body {
     line-height: 1.8;
 }
 #XPTable {
+  position: relative;
+  top: 160px;
   max-width: 500px;
   table-layout: auto;
   line-height: normal;
+  font: 14px Montserrat, sans-serif;
   /* border-collapse: collapse; */
   /* border: 1px solid black; */
 }
@@ -31,6 +34,27 @@ td {
 }
 .xp {
   border-spacing: 10px;
-  text-align: left;
-  /* width: 300px; */
+  text-align: right;
+  width: 250px;
+  padding-left: 10px;
+}
+.lvl {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#AttackCell {
+  background-color: yellow;
+}
+
+
+#xp-lookup {
+  position: absolute;
+  overflow: hidden;
+  /* margin: 15px; */
+  height: 275px;
+  width: 475px;
+  top: -150px;
+  left: -50px;
+
 }
